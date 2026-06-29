@@ -56,6 +56,223 @@
             z-index: -1;
         }
 
+        /* ============================================================
+           LANGUAGE SELECTION SCREEN
+        ============================================================ */
+        #language-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            text-align: center;
+            animation: fadeInLang 0.8s ease forwards;
+        }
+
+        @keyframes fadeInLang {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .lang-box {
+            max-width: 360px;
+            width: 90%;
+        }
+
+        .lang-monogram {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--sand);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .lang-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            color: var(--dark-green);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .lang-date {
+            margin-top: 8px;
+            letter-spacing: 5px;
+            font-size: 0.65rem;
+            color: var(--gold-text);
+            text-transform: uppercase;
+        }
+
+        .lang-divider {
+            width: 30px;
+            height: 1px;
+            background: var(--sage);
+            margin: 28px auto;
+            opacity: 0.6;
+        }
+
+        .lang-prompt {
+            font-size: 0.7rem;
+            color: #6a7a6a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .lang-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            border: 1px solid rgba(163, 177, 138, 0.35);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text);
+            width: 100%;
+        }
+
+        .lang-btn:hover {
+            background: var(--sage);
+            border-color: var(--sage);
+            color: var(--dark-green);
+        }
+
+        .lang-btn:hover .lang-native {
+            color: var(--dark-green);
+        }
+
+        .lang-btn-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .lang-flag {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .lang-native {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            color: var(--sand);
+            letter-spacing: 1px;
+            font-style: italic;
+            transition: color 0.4s ease;
+        }
+
+        /* ============================================================
+           PASSWORD SCREEN
+        ============================================================ */
+        #password-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        .password-box {
+            max-width: 320px;
+            width: 90%;
+        }
+
+        .login-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--dark-green);
+            font-weight: 400;
+        }
+
+        .login-subtitle {
+            margin-top: 5px;
+            letter-spacing: 4px;
+            font-size: 0.7rem;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .login-divider {
+            width: 30px;
+            height: 1px;
+            background: var(--sage);
+            margin: 25px auto;
+            opacity: 0.6;
+        }
+
+        .login-text {
+            font-size: 0.8rem;
+            color: #4a5a4a;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .password-box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(163, 177, 138, 0.3);
+            background: rgba(244, 244, 240, 0.6);
+            text-align: center;
+            font-family: inherit;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .password-box input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 6px rgba(201, 169, 110, 0.3);
+        }
+
+        .login-button {
+            padding: 12px 40px;
+            border: 1px solid var(--sage);
+            background: transparent;
+            color: var(--sage);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .login-button:hover {
+            background: var(--sage);
+            color: var(--dark-green);
+        }
+
+        .login-error {
+            margin-top: 10px;
+            font-size: 0.7rem;
+            color: #a44a3f;
+        }
+
+        /* ============================================================
+           NAV
+        ============================================================ */
         nav {
             position: fixed;
             top: 0;
@@ -81,6 +298,40 @@
             left: 12%;
             transform: translateX(-50%);
             letter-spacing: 2px;
+        }
+
+        /* Language switcher in nav */
+        .nav-lang {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 18px;
+        }
+
+        .nav-lang button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text);
+            opacity: 0.4;
+            transition: opacity 0.3s;
+            padding: 4px 2px;
+        }
+
+        .nav-lang button:hover,
+        .nav-lang button.active {
+            opacity: 1;
+            color: var(--dark-green);
+        }
+
+        .nav-lang-sep {
+            color: var(--sand);
+            font-size: 0.6rem;
+            opacity: 0.5;
         }
 
         .menu-toggle {
@@ -163,6 +414,9 @@
             transform: translateY(0);
         }
 
+        /* ============================================================
+           HERO / HEADER
+        ============================================================ */
         .hero-image-container {
             position: relative;
             width: 100%;
@@ -227,6 +481,9 @@
             margin-bottom: 8px;
         }
 
+        /* ============================================================
+           SECTIONS
+        ============================================================ */
         section {
             padding: 80px 25px;
             max-width: 800px;
@@ -323,6 +580,9 @@
             filter: sepia(0.2) contrast(0.9);
         }
 
+        /* ============================================================
+           FORM
+        ============================================================ */
         .form_matrimonio {
             margin-top: 30px;
             text-align: left;
@@ -402,7 +662,6 @@
             display: none;
         }
 
-        /* Blocco resto form con animazione */
         #resto-form {
             display: none;
             flex-direction: column;
@@ -431,6 +690,9 @@
             text-decoration: underline;
         }
 
+        /* ============================================================
+           TIMELINE
+        ============================================================ */
         .timeline {
             position: relative;
             margin-top: 60px;
@@ -464,7 +726,6 @@
             transform: translateX(-50%);
             background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
             opacity: 0;
-            animation: shimmer 2.5s linear infinite;
             pointer-events: none;
             z-index: 1;
         }
@@ -548,6 +809,9 @@
             color: var(--text);
         }
 
+        /* ============================================================
+           GUIDE
+        ============================================================ */
         .guide-container {
             text-align: left;
             display: grid;
@@ -585,6 +849,9 @@
             opacity: 0.4;
         }
 
+        /* ============================================================
+           FOOTER
+        ============================================================ */
         footer {
             margin-top: 100px;
             padding: 60px 20px 40px;
@@ -663,92 +930,9 @@
             text-align: center;
         }
 
-        #password-screen {
-            position: fixed;
-            inset: 0;
-            background: var(--bg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            text-align: center;
-        }
-
-        .password-box {
-            max-width: 320px;
-            width: 90%;
-        }
-
-        .login-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            color: var(--dark-green);
-            font-weight: 400;
-        }
-
-        .login-subtitle {
-            margin-top: 5px;
-            letter-spacing: 4px;
-            font-size: 0.7rem;
-            color: var(--gold);
-            text-transform: uppercase;
-        }
-
-        .login-divider {
-            width: 30px;
-            height: 1px;
-            background: var(--sage);
-            margin: 25px auto;
-            opacity: 0.6;
-        }
-
-        .login-text {
-            font-size: 0.8rem;
-            color: #4a5a4a;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .password-box input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(163, 177, 138, 0.3);
-            background: rgba(244, 244, 240, 0.6);
-            text-align: center;
-            font-family: inherit;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-
-        .password-box input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 6px rgba(201, 169, 110, 0.3);
-        }
-
-        .login-button {
-            padding: 12px 40px;
-            border: 1px solid var(--sage);
-            background: transparent;
-            color: var(--sage);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .login-button:hover {
-            background: var(--sage);
-            color: var(--dark-green);
-        }
-
-        .login-error {
-            margin-top: 10px;
-            font-size: 0.7rem;
-            color: #a44a3f;
-        }
-
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
         @media (max-width: 768px) {
             body::after {
                 background-size: contain;
@@ -828,24 +1012,66 @@
 
 <body>
 
+    <!-- LANGUAGE SELECTION SCREEN -->
+    <div id="language-screen">
+        <div class="lang-box">
+            <div class="lang-monogram">T &amp; J</div>
+            <h1 class="lang-title">Tommaso &amp; Janira</h1>
+            <p class="lang-date">29 Agosto 2026 · Alghero</p>
+            <div class="lang-divider"></div>
+            <p class="lang-prompt">Choose your language</p>
+            <div class="lang-options">
+                <button class="lang-btn" onclick="setLanguage('it')">
+                    <div class="lang-btn-left">
+                        <span class="lang-flag">&#127470;&#127481;</span>
+                        <span>Italiano</span>
+                    </div>
+                    <span class="lang-native">Benvenuti</span>
+                </button>
+                <button class="lang-btn" onclick="setLanguage('en')">
+                    <div class="lang-btn-left">
+                        <span class="lang-flag">&#127468;&#127463;</span>
+                        <span>English</span>
+                    </div>
+                    <span class="lang-native">Welcome</span>
+                </button>
+                <button class="lang-btn" onclick="setLanguage('fr')">
+                    <div class="lang-btn-left">
+                        <span class="lang-flag">&#127467;&#127479;</span>
+                        <span>Français</span>
+                    </div>
+                    <span class="lang-native">Bienvenue</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PASSWORD SCREEN -->
     <div id="password-screen">
         <div class="password-box">
-            <h1 class="login-title">Tommaso & Janira</h1>
+            <h1 class="login-title">Tommaso &amp; Janira</h1>
             <p class="login-subtitle">29 Agosto 2026 • Alghero</p>
             <div class="login-divider"></div>
-            <p class="login-text">
-                Questo invito è dedicato a voi.<br>
-                Inserite la parola segreta per scoprire tutti i dettagli
-            </p>
-            <input type="password" id="password-input" placeholder="Parola segreta">
-            <button onclick="checkPassword()" class="login-button">Entra</button>
+            <p class="login-text" data-i18n="login_text"></p>
+            <input type="password" id="password-input" data-i18n-placeholder="login_placeholder">
+            <button onclick="checkPassword()" class="login-button" data-i18n="login_btn"></button>
             <p id="error-msg" class="login-error"></p>
         </div>
     </div>
 
+    <!-- SITE CONTENT -->
     <div id="site-content" style="display:none;">
         <nav>
-            <a href="#" class="nav-logo">T & J</a>
+            <a href="#" class="nav-logo">T &amp; J</a>
+
+            <div class="nav-lang">
+                <button onclick="switchLang('it')" id="nav-lang-it">IT</button>
+                <span class="nav-lang-sep">·</span>
+                <button onclick="switchLang('en')" id="nav-lang-en">EN</button>
+                <span class="nav-lang-sep">·</span>
+                <button onclick="switchLang('fr')" id="nav-lang-fr">FR</button>
+            </div>
+
             <div class="menu-toggle" id="mobile-menu">
                 <span></span><span></span><span></span>
             </div>
@@ -853,71 +1079,70 @@
                 <div class="nav-illustration">
                     <img src="./images/icons/lucy.png" alt="Illustrazione cane">
                 </div>
-                <a href="#programma">Programma</a>
-                <a href="#arrivare">Come Arrivare</a>
-                <a href="#rsvp">RSVP</a>
-                <a href="#lista">Lista Nozze</a>
-                <a href="#scopri">Scopri Alghero</a>
+                <a href="#programma" data-i18n="nav_programma">Programma</a>
+                <a href="#arrivare" data-i18n="nav_arrivare">Come Arrivare</a>
+                <a href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
+                <a href="#lista" data-i18n="nav_lista">Lista Nozze</a>
+                <a href="#scopri" data-i18n="nav_scopri">Scopri Alghero</a>
             </div>
         </nav>
 
         <div class="hero-image-container"></div>
 
         <header>
-            <h1>Tommaso & Janira</h1>
+            <h1>Tommaso &amp; Janira</h1>
             <p>29 Agosto 2026 • Alghero</p>
             <div class="countdown">
-                <div><span id="days"></span>Giorni</div>
-                <div><span id="hours"></span>Ore</div>
-                <div><span id="minutes"></span>Minuti</div>
-                <div><span id="seconds"></span>Secondi</div>
+                <div><span id="days"></span><span data-i18n="cd_giorni">Giorni</span></div>
+                <div><span id="hours"></span><span data-i18n="cd_ore">Ore</span></div>
+                <div><span id="minutes"></span><span data-i18n="cd_minuti">Minuti</span></div>
+                <div><span id="seconds"></span><span data-i18n="cd_secondi">Secondi</span></div>
             </div>
         </header>
 
+        <!-- PROGRAMMA -->
         <section id="programma">
-            <div class="section-icon">
-                <img src="./images/icons/programma.png" alt="Programma">
-            </div>
-            <h2>Programma</h2>
+            <div class="section-icon"><img src="./images/icons/programma.png" alt="Programma"></div>
+            <h2 data-i18n="sec_programma">Programma</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <a href="#mappa-chiesa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/chiesa.png">
                         <div class="timeline-time">16:00</div>
-                        <div class="timeline-text"><b>Ritrovo</b>,<br>Parrocchia Cattedrale dell'Immacolata Concezione
-                        </div>
+                        <div class="timeline-text"><b data-i18n="ev_ritrovo">Ritrovo</b>,<br>Parrocchia Cattedrale
+                            dell'Immacolata Concezione</div>
                     </a>
                 </div>
                 <div class="timeline-item">
                     <a href="#mappa-chiesa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/anelli.png">
                         <div class="timeline-time">16:30</div>
-                        <div class="timeline-text"><b>Cerimonia</b>,<br>Parrocchia Cattedrale dell'Immacolata Concezione
-                        </div>
+                        <div class="timeline-text"><b data-i18n="ev_cerimonia">Cerimonia</b>,<br>Parrocchia Cattedrale
+                            dell'Immacolata Concezione</div>
                     </a>
                 </div>
                 <div class="timeline-item">
                     <a href="#mappa-villa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/mosca.png">
                         <div class="timeline-time">18:30</div>
-                        <div class="timeline-text"><b>Aperitivo e Ricevimento</b>,<br>Villa Mosca</div>
+                        <div class="timeline-text"><b data-i18n="ev_aperitivo">Aperitivo e Ricevimento</b>,<br>Villa
+                            Mosca</div>
                     </a>
                 </div>
                 <div class="timeline-item">
                     <a href="#mappa-villa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/calici.png">
                         <div class="timeline-time">22:00</div>
-                        <div class="timeline-text"><b>Party</b>,<br>Villa Mosca</div>
+                        <div class="timeline-text"><b data-i18n="ev_party">Party</b>,<br>Villa Mosca</div>
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- ARRIVARE -->
         <section id="arrivare">
-            <div class="section-icon">
-                <img src="./images/icons/pin.png" alt="Pin">
-            </div>
-            <h2>Come arrivare</h2>
+            <div class="section-icon"><img src="./images/icons/pin.png" alt="Pin"></div>
+            <h2 data-i18n="sec_arrivare">Come arrivare</h2>
             <iframe id="mappa-chiesa"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.2028652976583!2d8.310063576552947!3d40.5591971469552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dcf1e09622a5cf%3A0x8d3c58c73af662ab!2sParrocchia%20Cattedrale%20dell%E2%80%99Immacolata%20Concezione!5e0!3m2!1sit!2sit!4v1774877441897!5m2!1sit!2sit"
                 allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -931,79 +1156,77 @@
             <p><b>Villa Mosca</b><br>Via Antonio Gramsci 17, 07041, Alghero</p>
         </section>
 
+        <!-- RSVP -->
         <section id="rsvp">
-            <div class="section-icon">
-                <img src="./images/icons/rsvp.png" alt="RSVP">
-            </div>
+            <div class="section-icon"><img src="./images/icons/rsvp.png" alt="RSVP"></div>
             <h2>RSVP</h2>
-            <p>Vi preghiamo di confermare la vostra partecipazione</p>
+            <p data-i18n="rsvp_intro">Vi preghiamo di confermare la vostra partecipazione</p>
             <form
                 action="https://script.google.com/macros/s/AKfycbxSyER9lulmSQsgp9Wt0lKdw7jKi4yWdJoty2G6u2_qJFZEi1LGMWfOkVzRq6OjmxKhEA/exec"
                 method="POST" class="form_matrimonio" id="form-matrimonio">
                 <div class="conferma_container">
 
-                    <!-- Campo sempre visibile -->
                     <div class="form_group">
-                        <label>Nome e Cognome *</label>
+                        <label data-i18n="f_nome">Nome e Cognome *</label>
                         <input type="text" name="nome_cognome" required>
                     </div>
 
-                    <!-- Domanda presenza — sempre visibile -->
                     <div class="form_group">
-                        <label>Parteciperai? *</label>
+                        <label data-i18n="f_presenza">Parteciperai? *</label>
                         <div class="radio_group">
                             <label class="radio_item">
-                                <input type="radio" name="presenza" value="si" required id="presenza-si"> Sì
+                                <input type="radio" name="presenza" value="si" required id="presenza-si">
+                                <span data-i18n="f_si">Si</span>
                             </label>
                             <label class="radio_item">
-                                <input type="radio" name="presenza" value="no" id="presenza-no"> No
+                                <input type="radio" name="presenza" value="no" id="presenza-no">
+                                <span data-i18n="f_no">No</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Resto del form: compare solo se si risponde Sì -->
                     <div id="resto-form">
                         <div class="form_group">
-                            <label>Accompagnatore/Accompagnatrice</label>
-                            <input type="text" name="piu_uno" placeholder="Nome e cognome">
+                            <label data-i18n="f_accompagnatore">Accompagnatore/Accompagnatrice</label>
+                            <input type="text" name="piu_uno" data-i18n-placeholder="f_accompagnatore_ph">
                         </div>
                         <div class="form_group">
-                            <label>Porterai bambini/e con te? *</label>
+                            <label data-i18n="f_bambini">Porterai bambini/e con te? *</label>
                             <div class="radio_group">
                                 <label class="radio_item"><input type="radio" name="bambini" value="si" id="bambini-si">
-                                    Sì</label>
+                                    <span data-i18n="f_si">Si</span></label>
                                 <label class="radio_item"><input type="radio" name="bambini" value="no" id="bambini-no">
-                                    No</label>
+                                    <span data-i18n="f_no">No</span></label>
                             </div>
                         </div>
                         <div class="form_group" id="gruppo_bambini">
-                            <label>Dettagli Bambini (Numero, nomi, età, allergie) *</label>
+                            <label data-i18n="f_bambini_det">Dettagli Bambini *</label>
                             <textarea name="dettagli_bambini" id="input_bambini" rows="3" style="resize:none"
-                                placeholder="Es: 2 bambini: Anna (4 anni), Marco (6 anni)"></textarea>
+                                data-i18n-placeholder="f_bambini_ph"></textarea>
                         </div>
                         <div class="form_group">
-                            <label>Allergie, intolleranze o preferenze alimentari? *</label>
-                            <div class="intolleranze">Tue o di eventuali accompagnatori</div>
+                            <label data-i18n="f_intolleranze">Allergie, intolleranze o preferenze alimentari? *</label>
+                            <div class="intolleranze" data-i18n="f_intolleranze_sub">Tue o di eventuali accompagnatori
+                            </div>
                             <div class="radio_group">
                                 <label class="radio_item"><input type="radio" name="intolleranze" value="si"
-                                        id="intolleranze-si"> Sì</label>
+                                        id="intolleranze-si"> <span data-i18n="f_si">Si</span></label>
                                 <label class="radio_item"><input type="radio" name="intolleranze" value="no"
-                                        id="intolleranze-no"> No</label>
+                                        id="intolleranze-no"> <span data-i18n="f_no">No</span></label>
                             </div>
                         </div>
                         <div class="form_group" id="gruppo_specifica">
-                            <label>Specifica allergie/intolleranze *</label>
+                            <label data-i18n="f_specifica">Specifica allergie/intolleranze *</label>
                             <input type="text" name="specifica_intolleranze" id="input_specifica">
                         </div>
                         <div class="form_group">
-                            <label>Note per gli sposi</label>
+                            <label data-i18n="f_note">Note per gli sposi</label>
                             <textarea name="note" rows="3" style="resize:none"
-                                placeholder="Scrivici qualcosa..."></textarea>
+                                data-i18n-placeholder="f_note_ph"></textarea>
                         </div>
                     </div>
-                    <!-- /resto-form -->
 
-                    <button type="submit" class="button" id="submit-btn">Invia Conferma</button>
+                    <button type="submit" class="button" id="submit-btn" data-i18n="f_invia">Invia Conferma</button>
                     <p id="messaggio-conferma"
                         style="display:none; margin-top:10px; color:#99af57; font-weight:bold; font-family:'Montserrat',sans-serif;">
                     </p>
@@ -1011,53 +1234,48 @@
             </form>
         </section>
 
+        <!-- LISTA NOZZE -->
         <section id="lista">
-            <div class="section-icon">
-                <img src="./images/icons/regalo.png" alt="Regalo">
-            </div>
-            <h2>Lista nozze</h2>
+            <div class="section-icon"><img src="./images/icons/regalo.png" alt="Regalo"></div>
+            <h2 data-i18n="sec_lista">Lista nozze</h2>
             <p>
-                <i>Per la nostra luna di miele abbiamo scelto il Perù, un viaggio che da tempo sogniamo di vivere: tra
-                    le
-                    vette delle Ande e la magia di Machu Picchu, porteremo con noi ogni emozione di questo nuovo
-                    inizio.</i>
+                <i data-i18n="lista_testo"></i>
                 <br><br>
-                Il vostro affetto è per noi il dono più prezioso.
+                <span data-i18n="lista_affetto"></span>
                 <br><br>
-                Se vorrete accompagnarci in questa avventura speciale, lasciamo qui un modo per farlo:
+                <span data-i18n="lista_iban_intro"></span>
                 <br><br>
                 <b>IT52H0305801604100572428245</b>
                 <br>
-                <span style="font-size: 0.75rem">
-                    <i>IBAN intestato agli sposi, Janira Corrias e Tommaso Maggi</i>
-                </span>
+                <span style="font-size: 0.75rem"><i data-i18n="lista_iban_int"></i></span>
             </p>
         </section>
 
+        <!-- SCOPRI ALGHERO -->
         <section id="scopri" class="scopri-alghero">
-            <div class="section-icon">
-                <img class="alghero-icon" src="./images/icons/alghero.png" alt="Scopri">
-            </div>
+            <div class="section-icon"><img class="alghero-icon" src="./images/icons/alghero.png" alt="Scopri"></div>
             <div class="accordion-header" onclick="toggleAlghero()" style="cursor:pointer;">
-                <h2>Scopri Alghero <span id="accordion-arrow"
-                        style="display:inline-block; transition:transform 0.3s ease; font-size:1.5rem; vertical-align:middle; margin-left:10px;">↓</span>
+                <h2>
+                    <span data-i18n="sec_scopri">Scopri Alghero</span>
+                    <span id="accordion-arrow"
+                        style="display:inline-block; transition:transform 0.3s ease; font-size:1.5rem; vertical-align:middle; margin-left:10px;">&#8595;</span>
                 </h2>
-                <p><i>I nostri consigli per il vostro soggiorno</i></p>
+                <p><i data-i18n="scopri_sub">I nostri consigli per il vostro soggiorno</i></p>
             </div>
             <div id="accordion-content"
                 style="max-height:0; overflow:hidden; transition:max-height 0.5s ease-out; opacity:0;">
                 <div class="guide-container" style="padding-top:40px;">
                     <div class="guide-category">
-                        <h3>🌊 Il Mare</h3>
+                        <h3>&#127754; <span data-i18n="g_mare">Il Mare</span></h3>
                         <ul class="guide-list">
-                            <li>Il Lazzaretto & Le Bombarde</li>
+                            <li>Il Lazzaretto &amp; Le Bombarde</li>
                             <li>Porto Ferro</li>
-                            <li>Noleggio gommone</li>
-                            <li>Giro delle calette</li>
+                            <li data-i18n="g_gommone">Noleggio gommone</li>
+                            <li data-i18n="g_calette">Giro delle calette</li>
                         </ul>
                     </div>
                     <div class="guide-category">
-                        <h3>🍸 Aperitivo</h3>
+                        <h3>&#127864; <span data-i18n="g_aperitivo">Aperitivo</span></h3>
                         <ul class="guide-list">
                             <li><b>Villa Mosca</b></li>
                             <li><b>Riservato</b></li>
@@ -1067,7 +1285,7 @@
                         </ul>
                     </div>
                     <div class="guide-category">
-                        <h3>🍤 Dove Mangiare</h3>
+                        <h3>&#129316; <span data-i18n="g_mangiare">Dove Mangiare</span></h3>
                         <ul class="guide-list">
                             <li>Focaccia dal Milese</li>
                             <li>Ballarini</li>
@@ -1077,7 +1295,7 @@
                         </ul>
                     </div>
                     <div class="guide-category">
-                        <h3>🍦 Tipici & Gelato</h3>
+                        <h3>&#127846; <span data-i18n="g_tipici">Tipici &amp; Gelato</span></h3>
                         <ul class="guide-list">
                             <li><b>Sa Mandra</b></li>
                             <li><b>Agriturismo Barbagia</b></li>
@@ -1086,17 +1304,17 @@
                         </ul>
                     </div>
                     <div class="guide-category">
-                        <h3>🌅 Da non perdere</h3>
+                        <h3>&#127749; <span data-i18n="g_nonperdere">Da non perdere</span></h3>
                         <ul class="guide-list">
-                            <li>Grotte di Nettuno</li>
-                            <li>Belvedere di Capo Caccia</li>
-                            <li>Torre del Porticciolo</li>
+                            <li data-i18n="g_nettuno">Grotte di Nettuno</li>
+                            <li data-i18n="g_capo">Belvedere di Capo Caccia</li>
+                            <li data-i18n="g_torre">Torre del Porticciolo</li>
                         </ul>
                     </div>
                     <div class="guide-category">
-                        <h3>🍷 Cantine</h3>
+                        <h3>&#127863; <span data-i18n="g_cantine">Cantine</span></h3>
                         <ul class="guide-list">
-                            <li>Tenute Sella & Mosca</li>
+                            <li>Tenute Sella &amp; Mosca</li>
                             <li>Podere Guardia Grande</li>
                             <li>Santa Maria La Palma</li>
                         </ul>
@@ -1116,12 +1334,244 @@
                     <div class="footer-photo-caption">Paris, 2025</div>
                 </div>
             </div>
-            Tommaso & Janira — 29.08.2026
+            Tommaso &amp; Janira — 29.08.2026
         </footer>
     </div>
 
     <script>
-        /* PASSWORD */
+        /* ================================================================
+           TRANSLATIONS
+        ================================================================ */
+        const TRANSLATIONS = {
+            it: {
+                login_text: "Questo invito è dedicato a voi.\nInserite la parola segreta per scoprire tutti i dettagli",
+                login_placeholder: "Parola segreta",
+                login_btn: "Entra",
+                login_error: "Password errata",
+                nav_programma: "Programma",
+                nav_arrivare: "Come Arrivare",
+                nav_rsvp: "RSVP",
+                nav_lista: "Lista Nozze",
+                nav_scopri: "Scopri Alghero",
+                cd_giorni: "Giorni",
+                cd_ore: "Ore",
+                cd_minuti: "Minuti",
+                cd_secondi: "Secondi",
+                sec_programma: "Programma",
+                ev_ritrovo: "Ritrovo",
+                ev_cerimonia: "Cerimonia",
+                ev_aperitivo: "Aperitivo e Ricevimento",
+                ev_party: "Party",
+                sec_arrivare: "Come arrivare",
+                rsvp_intro: "Vi preghiamo di confermare la vostra partecipazione",
+                f_nome: "Nome e Cognome *",
+                f_presenza: "Parteciperai? *",
+                f_si: "Sì",
+                f_no: "No",
+                f_accompagnatore: "Accompagnatore/Accompagnatrice",
+                f_accompagnatore_ph: "Nome e cognome",
+                f_bambini: "Porterai bambini/e con te? *",
+                f_bambini_det: "Dettagli Bambini (numero, nomi, età, allergie) *",
+                f_bambini_ph: "Es: 2 bambini: Anna (4 anni), Marco (6 anni)",
+                f_intolleranze: "Allergie, intolleranze o preferenze alimentari? *",
+                f_intolleranze_sub: "Tue o di eventuali accompagnatori",
+                f_specifica: "Specifica allergie/intolleranze *",
+                f_note: "Note per gli sposi",
+                f_note_ph: "Scrivici qualcosa...",
+                f_invia: "Invia Conferma",
+                f_invio_btn: "Invio...",
+                f_invio_loading: "Stiamo salvando la tua conferma...",
+                f_invio_ok: "Grazie! La tua conferma è stata registrata con successo. ✨",
+                f_invio_err: "Ops! C'è stato un errore. Riprova tra poco.",
+                f_riprova: "Riprova",
+                sec_lista: "Lista nozze",
+                lista_testo: "Per la nostra luna di miele abbiamo scelto il Perù, un viaggio che da tempo sogniamo di vivere: tra le vette delle Ande e la magia di Machu Picchu, porteremo con noi ogni emozione di questo nuovo inizio.",
+                lista_affetto: "Il vostro affetto è per noi il dono più prezioso.",
+                lista_iban_intro: "Se vorrete accompagnarci in questa avventura speciale, lasciamo qui un modo per farlo:",
+                lista_iban_int: "IBAN intestato agli sposi, Janira Corrias e Tommaso Maggi",
+                sec_scopri: "Scopri Alghero",
+                scopri_sub: "I nostri consigli per il vostro soggiorno",
+                g_mare: "Il Mare",
+                g_gommone: "Noleggio gommone",
+                g_calette: "Giro delle calette",
+                g_aperitivo: "Aperitivo",
+                g_mangiare: "Dove Mangiare",
+                g_tipici: "Tipici & Gelato",
+                g_nonperdere: "Da non perdere",
+                g_nettuno: "Grotte di Nettuno",
+                g_capo: "Belvedere di Capo Caccia",
+                g_torre: "Torre del Porticciolo",
+                g_cantine: "Cantine"
+            },
+            en: {
+                login_text: "This invitation is just for you.\nEnter the secret word to discover all the details",
+                login_placeholder: "Secret word",
+                login_btn: "Enter",
+                login_error: "Wrong password",
+                nav_programma: "Schedule",
+                nav_arrivare: "Getting There",
+                nav_rsvp: "RSVP",
+                nav_lista: "Gift List",
+                nav_scopri: "Explore Alghero",
+                cd_giorni: "Days",
+                cd_ore: "Hours",
+                cd_minuti: "Minutes",
+                cd_secondi: "Seconds",
+                sec_programma: "Schedule",
+                ev_ritrovo: "Gathering",
+                ev_cerimonia: "Ceremony",
+                ev_aperitivo: "Aperitivo & Reception",
+                ev_party: "Party",
+                sec_arrivare: "Getting there",
+                rsvp_intro: "Please confirm your attendance",
+                f_nome: "Full Name *",
+                f_presenza: "Will you attend? *",
+                f_si: "Yes",
+                f_no: "No",
+                f_accompagnatore: "Plus One",
+                f_accompagnatore_ph: "Full name",
+                f_bambini: "Will you bring children? *",
+                f_bambini_det: "Children details (number, names, age, allergies) *",
+                f_bambini_ph: "E.g: 2 children: Anna (4 years), Marco (6 years)",
+                f_intolleranze: "Food allergies, intolerances or preferences? *",
+                f_intolleranze_sub: "Yours or your plus one's",
+                f_specifica: "Please specify allergies/intolerances *",
+                f_note: "A note for the couple",
+                f_note_ph: "Write us something...",
+                f_invia: "Send RSVP",
+                f_invio_btn: "Sending...",
+                f_invio_loading: "Saving your response...",
+                f_invio_ok: "Thank you! Your RSVP has been recorded successfully. ✨",
+                f_invio_err: "Oops! Something went wrong. Please try again.",
+                f_riprova: "Try again",
+                sec_lista: "Gift list",
+                lista_testo: "For our honeymoon we chose Peru — a trip we have long dreamed of: among the peaks of the Andes and the magic of Machu Picchu, we will carry every emotion of this new beginning.",
+                lista_affetto: "Your love and presence are the most precious gift.",
+                lista_iban_intro: "If you'd like to join us on this special adventure, here is a way to do so:",
+                lista_iban_int: "Bank transfer in the name of the couple, Janira Corrias and Tommaso Maggi",
+                sec_scopri: "Explore Alghero",
+                scopri_sub: "Our recommendations for your stay",
+                g_mare: "The Sea",
+                g_gommone: "Boat rental",
+                g_calette: "Coves tour",
+                g_aperitivo: "Aperitivo",
+                g_mangiare: "Where to Eat",
+                g_tipici: "Local Bites & Gelato",
+                g_nonperdere: "Must-see",
+                g_nettuno: "Neptune's Grotto",
+                g_capo: "Capo Caccia Viewpoint",
+                g_torre: "Torre del Porticciolo",
+                g_cantine: "Wineries"
+            },
+            fr: {
+                login_text: "Cette invitation est pour vous.\nEntrez le mot secret pour découvrir tous les détails",
+                login_placeholder: "Mot secret",
+                login_btn: "Entrer",
+                login_error: "Mot de passe incorrect",
+                nav_programma: "Programme",
+                nav_arrivare: "Comment arriver",
+                nav_rsvp: "RSVP",
+                nav_lista: "Liste de mariage",
+                nav_scopri: "Découvrir Alghero",
+                cd_giorni: "Jours",
+                cd_ore: "Heures",
+                cd_minuti: "Minutes",
+                cd_secondi: "Secondes",
+                sec_programma: "Programme",
+                ev_ritrovo: "Rassemblement",
+                ev_cerimonia: "Cérémonie",
+                ev_aperitivo: "Apéritif & Réception",
+                ev_party: "Fête",
+                sec_arrivare: "Comment arriver",
+                rsvp_intro: "Merci de confirmer votre participation",
+                f_nome: "Nom et Prénom *",
+                f_presenza: "Serez-vous présent(e) ? *",
+                f_si: "Oui",
+                f_no: "Non",
+                f_accompagnatore: "Accompagnateur / Accompagnatrice",
+                f_accompagnatore_ph: "Nom et prénom",
+                f_bambini: "Viendrez-vous avec des enfants ? *",
+                f_bambini_det: "Détails des enfants (nombre, prénoms, âge, allergies) *",
+                f_bambini_ph: "Ex : 2 enfants : Anna (4 ans), Marco (6 ans)",
+                f_intolleranze: "Allergies, intolérances ou préférences alimentaires ? *",
+                f_intolleranze_sub: "Les vôtres ou celles de votre accompagnateur",
+                f_specifica: "Précisez les allergies/intolérances *",
+                f_note: "Un mot pour les mariés",
+                f_note_ph: "Écrivez-nous quelque chose...",
+                f_invia: "Envoyer la confirmation",
+                f_invio_btn: "Envoi...",
+                f_invio_loading: "Enregistrement de votre confirmation...",
+                f_invio_ok: "Merci ! Votre confirmation a bien été enregistrée. ✨",
+                f_invio_err: "Oups ! Une erreur s'est produite. Veuillez réessayer.",
+                f_riprova: "Réessayer",
+                sec_lista: "Liste de mariage",
+                lista_testo: "Pour notre lune de miel, nous avons choisi le Pérou, un voyage dont nous rêvons depuis longtemps : entre les sommets des Andes et la magie du Machu Picchu, nous emporterons avec nous chaque émotion de ce nouveau départ.",
+                lista_affetto: "Votre affection est pour nous le plus précieux des cadeaux.",
+                lista_iban_intro: "Si vous souhaitez nous accompagner dans cette aventure spéciale, voici comment le faire :",
+                lista_iban_int: "Virement au nom des mariés, Janira Corrias et Tommaso Maggi",
+                sec_scopri: "Découvrir Alghero",
+                scopri_sub: "Nos conseils pour votre séjour",
+                g_mare: "La Mer",
+                g_gommone: "Location de bateau pneumatique",
+                g_calette: "Tour des calanques",
+                g_aperitivo: "Apéritif",
+                g_mangiare: "Où manger",
+                g_tipici: "Spécialités & Glaces",
+                g_nonperdere: "À ne pas manquer",
+                g_nettuno: "Grottes de Neptune",
+                g_capo: "Belvédère de Capo Caccia",
+                g_torre: "Torre del Porticciolo",
+                g_cantine: "Caves viticoles"
+            }
+        };
+
+        /* ================================================================
+           LANGUAGE ENGINE
+        ================================================================ */
+        let currentLang = sessionStorage.getItem('wedding_lang') || 'it';
+
+        function t(key) {
+            return (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key])
+                || (TRANSLATIONS['it'][key])
+                || key;
+        }
+
+        function applyTranslations() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                el.textContent = t(el.getAttribute('data-i18n'));
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+            });
+            ['it', 'en', 'fr'].forEach(lang => {
+                const btn = document.getElementById('nav-lang-' + lang);
+                if (btn) btn.classList.toggle('active', lang === currentLang);
+            });
+            document.documentElement.lang = currentLang;
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            sessionStorage.setItem('wedding_lang', lang);
+            const ls = document.getElementById('language-screen');
+            ls.style.transition = 'opacity 0.4s ease';
+            ls.style.opacity = '0';
+            setTimeout(() => {
+                ls.style.display = 'none';
+                document.getElementById('password-screen').style.display = 'flex';
+                applyTranslations();
+            }, 400);
+        }
+
+        function switchLang(lang) {
+            currentLang = lang;
+            sessionStorage.setItem('wedding_lang', lang);
+            applyTranslations();
+        }
+
+        /* ================================================================
+           PASSWORD
+        ================================================================ */
         const PASSWORD = "LUCY";
 
         function checkPassword() {
@@ -1129,8 +1579,9 @@
             if (input === PASSWORD) {
                 document.getElementById("password-screen").style.display = "none";
                 document.getElementById("site-content").style.display = "block";
+                applyTranslations();
             } else {
-                document.getElementById("error-msg").innerText = "Password errata";
+                document.getElementById("error-msg").innerText = t('login_error');
             }
         }
 
@@ -1138,7 +1589,9 @@
             if (e.key === "Enter") checkPassword();
         });
 
-        /* MENU MOBILE */
+        /* ================================================================
+           MOBILE MENU
+        ================================================================ */
         const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
 
@@ -1154,14 +1607,15 @@
             });
         });
 
-        /* SCROLL ANIMATIONS */
+        /* ================================================================
+           SCROLL ANIMATIONS
+        ================================================================ */
         const scrollObserver = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
 
         document.querySelectorAll('section').forEach(s => scrollObserver.observe(s));
 
-        /* TIMELINE */
         const timeline = document.querySelector('.timeline');
         const timelineItems = document.querySelectorAll('.timeline-item');
 
@@ -1176,7 +1630,9 @@
             });
         }, { threshold: 0.2 }).observe(timeline);
 
-        /* COUNTDOWN */
+        /* ================================================================
+           COUNTDOWN
+        ================================================================ */
         const weddingDate = new Date("August 29, 2026 16:00:00").getTime();
         setInterval(() => {
             const d = weddingDate - Date.now();
@@ -1188,72 +1644,48 @@
             }
         }, 1000);
 
-        /* -------------------------------------------------------
-           PRESENZA — mostra/nasconde il resto del form
-        ------------------------------------------------------- */
+        /* ================================================================
+           FORM LOGIC
+        ================================================================ */
         const restoForm = document.getElementById('resto-form');
 
-        // Tutti i campi required interni al blocco resto-form
-        const campiRequiredInterni = [
-            { name: 'bambini' },
-            { name: 'intolleranze' }
-        ];
-
         function abilitaRestoForm(abilita) {
-            // Radio interni: bambini e intolleranze
-            campiRequiredInterni.forEach(({ name }) => {
-                document.querySelectorAll(`#resto-form input[name="${name}"]`).forEach(r => {
+            ['bambini', 'intolleranze'].forEach(name => {
+                document.querySelectorAll('#resto-form input[name="' + name + '"]').forEach(r => {
                     r.required = abilita;
                 });
             });
         }
 
-        function mostraRestoForm() {
-            restoForm.classList.add('aperto');
-            abilitaRestoForm(true);
-        }
+        function mostraRestoForm() { restoForm.classList.add('aperto'); abilitaRestoForm(true); }
 
         function nascondiRestoForm() {
             restoForm.classList.remove('aperto');
             abilitaRestoForm(false);
-
-            // Resetta e chiudi i sotto-gruppi condizionali
             document.getElementById('gruppo_specifica').style.display = 'none';
             document.getElementById('gruppo_bambini').style.display = 'none';
-            const inputSpecifica = document.getElementById('input_specifica');
-            const inputBambini = document.getElementById('input_bambini');
-            inputSpecifica.required = false;
-            inputSpecifica.value = '';
-            inputBambini.required = false;
-            inputBambini.value = '';
-
-            // Reset radio interni
+            const is = document.getElementById('input_specifica');
+            const ib = document.getElementById('input_bambini');
+            is.required = false; is.value = '';
+            ib.required = false; ib.value = '';
             restoForm.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
             restoForm.querySelectorAll('input[type="text"], textarea').forEach(i => i.value = '');
         }
 
         document.querySelectorAll('input[name="presenza"]').forEach(radio => {
             radio.addEventListener('change', () => {
-                if (document.getElementById('presenza-si').checked) {
-                    mostraRestoForm();
-                } else {
-                    nascondiRestoForm();
-                }
+                document.getElementById('presenza-si').checked ? mostraRestoForm() : nascondiRestoForm();
             });
         });
 
-        /* FORM CONDIZIONALE — logica riutilizzabile */
         function bindConditionalRadio(radioName, groupId, inputId) {
             const group = document.getElementById(groupId);
             const input = inputId ? document.getElementById(inputId) : null;
-            document.querySelectorAll(`input[name="${radioName}"]`).forEach(radio => {
+            document.querySelectorAll('input[name="' + radioName + '"]').forEach(radio => {
                 radio.addEventListener('change', () => {
                     const show = radio.value === 'si' && radio.checked;
                     group.style.display = show ? 'flex' : 'none';
-                    if (input) {
-                        input.required = show;
-                        if (!show) input.value = '';
-                    }
+                    if (input) { input.required = show; if (!show) input.value = ''; }
                 });
             });
         }
@@ -1261,7 +1693,9 @@
         bindConditionalRadio('intolleranze', 'gruppo_specifica', 'input_specifica');
         bindConditionalRadio('bambini', 'gruppo_bambini', 'input_bambini');
 
-        /* ACCORDION ALGHERO */
+        /* ================================================================
+           ACCORDION
+        ================================================================ */
         function toggleAlghero() {
             const content = document.getElementById('accordion-content');
             const arrow = document.getElementById('accordion-arrow');
@@ -1271,7 +1705,9 @@
             arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
         }
 
-        /* FORM SUBMIT */
+        /* ================================================================
+           FORM SUBMIT
+        ================================================================ */
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyER9lulmSQsgp9Wt0lKdw7jKi4yWdJoty2G6u2_qJFZEi1LGMWfOkVzRq6OjmxKhEA/exec';
         const form = document.getElementById('form-matrimonio');
         const btn = document.getElementById('submit-btn');
@@ -1280,26 +1716,30 @@
         form.addEventListener('submit', e => {
             e.preventDefault();
             btn.disabled = true;
-            btn.innerText = "Invio...";
+            btn.innerText = t('f_invio_btn');
             msg.style.display = "block";
-            msg.innerText = "Stiamo salvando la tua conferma...";
+            msg.innerText = t('f_invio_loading');
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(() => {
-                    msg.innerText = "Grazie! La tua conferma è stata registrata con successo. ✨";
+                    msg.innerText = t('f_invio_ok');
                     btn.style.display = "none";
                     form.reset();
-                    // Nascondi il blocco resto-form dopo il reset
                     nascondiRestoForm();
                 })
                 .catch(err => {
                     console.error('Errore!', err.message);
-                    msg.innerText = "Ops! C'è stato un errore. Riprova tra poco.";
+                    msg.innerText = t('f_invio_err');
                     msg.style.color = "#a44a3f";
                     btn.disabled = false;
-                    btn.innerText = "Riprova";
+                    btn.innerText = t('f_riprova');
                 });
         });
+
+        /* ================================================================
+           INIT
+        ================================================================ */
+        applyTranslations();
     </script>
 </body>
 
