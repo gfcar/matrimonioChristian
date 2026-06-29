@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tommaso & Janira</title>
+    <title>Emilie & Christian</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400&display=swap"
@@ -458,27 +458,36 @@
         }
 
         .countdown {
-            margin-top: 50px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            gap: clamp(8px, 3vw, 40px);
+            margin-top: 50px;
+            width: 100%;
+            padding: 0 16px;
         }
 
         .countdown div {
+            flex: 1;
             text-align: center;
-            font-size: .6rem;
-            color: #99af57;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            min-width: 0;
         }
 
-        .countdown span {
+        .countdown span:first-child {
             display: block;
-            font-size: 3.6rem;
             font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 7vw, 3.6rem);
             color: var(--dark-green);
             line-height: 1;
             margin-bottom: 8px;
+        }
+
+        .countdown span:last-child {
+            display: block;
+            font-size: clamp(.5rem, 2vw, .7rem);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #99af57;
         }
 
         /* ============================================================
@@ -1015,9 +1024,9 @@
     <!-- LANGUAGE SELECTION SCREEN -->
     <div id="language-screen">
         <div class="lang-box">
-            <div class="lang-monogram">T &amp; J</div>
-            <h1 class="lang-title">Tommaso &amp; Janira</h1>
-            <p class="lang-date">29 Agosto 2026 · Alghero</p>
+            <div class="lang-monogram">E & C</div>
+            <h1 class="lang-title">Emilie & Christian</h1>
+            <p class="lang-date">17 Ottobre 2026</p>
             <div class="lang-divider"></div>
             <p class="lang-prompt">Choose your language</p>
             <div class="lang-options">
@@ -1049,8 +1058,8 @@
     <!-- PASSWORD SCREEN -->
     <div id="password-screen">
         <div class="password-box">
-            <h1 class="login-title">Tommaso &amp; Janira</h1>
-            <p class="login-subtitle">29 Agosto 2026 • Alghero</p>
+            <h1 class="login-title">Emilie & Christian</h1>
+            <p class="login-subtitle">17 Ottobre 2026</p>
             <div class="login-divider"></div>
             <p class="login-text" data-i18n="login_text"></p>
             <input type="password" id="password-input" data-i18n-placeholder="login_placeholder">
@@ -1062,7 +1071,7 @@
     <!-- SITE CONTENT -->
     <div id="site-content" style="display:none;">
         <nav>
-            <a href="#" class="nav-logo">T &amp; J</a>
+            <a href="#" class="nav-logo">E & C</a>
 
             <div class="nav-lang">
                 <button onclick="switchLang('it')" id="nav-lang-it">IT</button>
@@ -1083,15 +1092,15 @@
                 <a href="#arrivare" data-i18n="nav_arrivare">Come Arrivare</a>
                 <a href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
                 <a href="#lista" data-i18n="nav_lista">Lista Nozze</a>
-                <a href="#scopri" data-i18n="nav_scopri">Scopri Alghero</a>
+                <!--   <a href="#scopri" data-i18n="nav_scopri">Scopri Alghero</a>-->
             </div>
         </nav>
 
         <div class="hero-image-container"></div>
 
         <header>
-            <h1>Tommaso &amp; Janira</h1>
-            <p>29 Agosto 2026 • Alghero</p>
+            <h1>Emilie & Christian</h1>
+            <p>17 Ottobre 2026</p>
             <div class="countdown">
                 <div><span id="days"></span><span data-i18n="cd_giorni">Giorni</span></div>
                 <div><span id="hours"></span><span data-i18n="cd_ore">Ore</span></div>
@@ -1109,31 +1118,31 @@
                     <a href="#mappa-chiesa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/chiesa.png">
                         <div class="timeline-time">16:00</div>
-                        <div class="timeline-text"><b data-i18n="ev_ritrovo">Ritrovo</b>,<br>Parrocchia Cattedrale
-                            dell'Immacolata Concezione</div>
+                        <div class="timeline-text"><b data-i18n="ev_ritrovo">Ritrovo</b>,<br>Parrocchia di Nostra
+                            Signora del Sacro Cuore di Gesù</div>
                     </a>
                 </div>
                 <div class="timeline-item">
                     <a href="#mappa-chiesa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/anelli.png">
                         <div class="timeline-time">16:30</div>
-                        <div class="timeline-text"><b data-i18n="ev_cerimonia">Cerimonia</b>,<br>Parrocchia Cattedrale
-                            dell'Immacolata Concezione</div>
+                        <div class="timeline-text"><b data-i18n="ev_cerimonia">Cerimonia</b>,<br>Parrocchia di Nostra
+                            Signora del Sacro Cuore di Gesù</div>
                     </a>
                 </div>
                 <div class="timeline-item">
                     <a href="#mappa-villa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/mosca.png">
                         <div class="timeline-time">18:30</div>
-                        <div class="timeline-text"><b data-i18n="ev_aperitivo">Aperitivo e Ricevimento</b>,<br>Villa
-                            Mosca</div>
+                        <div class="timeline-text"><b data-i18n="ev_aperitivo">Aperitivo e
+                                Ricevimento</b>,<br>Ristorante l'Ultimo Borgo</div>
                     </a>
                 </div>
                 <div class="timeline-item">
                     <a href="#mappa-villa" class="timeline-content">
                         <img class="schedule-icon" src="./images/icons/calici.png">
                         <div class="timeline-time">22:00</div>
-                        <div class="timeline-text"><b data-i18n="ev_party">Party</b>,<br>Villa Mosca</div>
+                        <div class="timeline-text"><b data-i18n="ev_party">Party</b>,<br>Ristorante l’Ultimo Borgo</div>
                     </a>
                 </div>
             </div>
@@ -1144,16 +1153,19 @@
             <div class="section-icon"><img src="./images/icons/pin.png" alt="Pin"></div>
             <h2 data-i18n="sec_arrivare">Come arrivare</h2>
             <iframe id="mappa-chiesa"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.2028652976583!2d8.310063576552947!3d40.5591971469552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dcf1e09622a5cf%3A0x8d3c58c73af662ab!2sParrocchia%20Cattedrale%20dell%E2%80%99Immacolata%20Concezione!5e0!3m2!1sit!2sit!4v1774877441897!5m2!1sit!2sit"
-                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d64576.62947150447!2d7.7101483!3d45.1714029!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886e356bc4925d%3A0x1e4a9a26c71915d!2sParrocchia%20di%20Nostra%20Signora%20del%20Sacro%20Cuore%20di%20Ges%C3%B9!5e1!3m2!1sit!2sit!4v1782734228795!5m2!1sit!2sit"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
             <br>
-            <p><b>Parrocchia Cattedrale dell'Immacolata Concezione</b><br>Piazza Duomo 2, 07041, Alghero</p>
+            <p><b>Parrocchia di Nostra Signora del Sacro Cuore di Gesù</b><br>Via Generale dalla Chiesa, 26, 10079
+                Mappano TO, Italia</p>
             <br><br>
             <iframe id="mappa-villa"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.470255152096!2d8.314154376552745!3d40.553291447315736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12dcf1dc7e8f0993%3A0x7cbf6078c31a2b0c!2sVilla%20Mosca%20Charming%20House!5e0!3m2!1sit!2sit!4v1774866825291!5m2!1sit!2sit"
-                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4036.7795013227815!2d7.753938!3d45.1609573!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478871f3036d1883%3A0x74aa78614f3bc212!2sL&#39;Ultimo%20Borgo!5e1!3m2!1sit!2sit!4v1782734260253!5m2!1sit!2sit"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
             <br>
-            <p><b>Villa Mosca</b><br>Via Antonio Gramsci 17, 07041, Alghero</p>
+            <p><b>Ristorante l'Ultimo Borgo</b><br>Str. della Cebrosa, 166, 10036 Settimo Torinese TO, Italia</p>
         </section>
 
         <!-- RSVP -->
@@ -1245,14 +1257,14 @@
                 <br><br>
                 <span data-i18n="lista_iban_intro"></span>
                 <br><br>
-                <b>IT52H0305801604100572428245</b>
+                <b>DE06100110012629794448</b>
                 <br>
                 <span style="font-size: 0.75rem"><i data-i18n="lista_iban_int"></i></span>
             </p>
         </section>
 
         <!-- SCOPRI ALGHERO -->
-        <section id="scopri" class="scopri-alghero">
+        <!-- <section id="scopri" class="scopri-alghero">
             <div class="section-icon"><img class="alghero-icon" src="./images/icons/alghero.png" alt="Scopri"></div>
             <div class="accordion-header" onclick="toggleAlghero()" style="cursor:pointer;">
                 <h2>
@@ -1268,7 +1280,7 @@
                     <div class="guide-category">
                         <h3>&#127754; <span data-i18n="g_mare">Il Mare</span></h3>
                         <ul class="guide-list">
-                            <li>Il Lazzaretto &amp; Le Bombarde</li>
+                            <li>Il Lazzaretto & Le Bombarde</li>
                             <li>Porto Ferro</li>
                             <li data-i18n="g_gommone">Noleggio gommone</li>
                             <li data-i18n="g_calette">Giro delle calette</li>
@@ -1277,7 +1289,7 @@
                     <div class="guide-category">
                         <h3>&#127864; <span data-i18n="g_aperitivo">Aperitivo</span></h3>
                         <ul class="guide-list">
-                            <li><b>Villa Mosca</b></li>
+                            <li><b>Ristorante l’Ultimo Borgo</b></li>
                             <li><b>Riservato</b></li>
                             <li><b>Bahia</b></li>
                             <li><b>Rifugio di Mare</b></li>
@@ -1295,7 +1307,7 @@
                         </ul>
                     </div>
                     <div class="guide-category">
-                        <h3>&#127846; <span data-i18n="g_tipici">Tipici &amp; Gelato</span></h3>
+                        <h3>&#127846; <span data-i18n="g_tipici">Tipici & Gelato</span></h3>
                         <ul class="guide-list">
                             <li><b>Sa Mandra</b></li>
                             <li><b>Agriturismo Barbagia</b></li>
@@ -1314,14 +1326,14 @@
                     <div class="guide-category">
                         <h3>&#127863; <span data-i18n="g_cantine">Cantine</span></h3>
                         <ul class="guide-list">
-                            <li>Tenute Sella &amp; Mosca</li>
+                            <li>Tenute Sella & Mosca</li>
                             <li>Podere Guardia Grande</li>
                             <li>Santa Maria La Palma</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
         <footer>
             <div class="footer-photo-wrapper">
@@ -1330,11 +1342,11 @@
                     <div class="frame-corner frame-corner--tr"></div>
                     <div class="frame-corner frame-corner--bl"></div>
                     <div class="frame-corner frame-corner--br"></div>
-                    <img src="./images/paris.jpeg" alt="Tommaso Janira a Parigi" class="footer-photo">
+                    <img src="./images/paris.jpeg" alt="Emilie Christian a Parigi" class="footer-photo">
                     <div class="footer-photo-caption">Paris, 2025</div>
                 </div>
             </div>
-            Tommaso &amp; Janira — 29.08.2026
+            Emilie & Christian — 17.10.2026
         </footer>
     </div>
 
@@ -1388,7 +1400,7 @@
                 lista_testo: "Per la nostra luna di miele abbiamo scelto il Perù, un viaggio che da tempo sogniamo di vivere: tra le vette delle Ande e la magia di Machu Picchu, porteremo con noi ogni emozione di questo nuovo inizio.",
                 lista_affetto: "Il vostro affetto è per noi il dono più prezioso.",
                 lista_iban_intro: "Se vorrete accompagnarci in questa avventura speciale, lasciamo qui un modo per farlo:",
-                lista_iban_int: "IBAN intestato agli sposi, Janira Corrias e Tommaso Maggi",
+                lista_iban_int: "IBAN intestato a Christian Rollo",
                 sec_scopri: "Scopri Alghero",
                 scopri_sub: "I nostri consigli per il vostro soggiorno",
                 g_mare: "Il Mare",
@@ -1448,7 +1460,7 @@
                 lista_testo: "For our honeymoon we chose Peru — a trip we have long dreamed of: among the peaks of the Andes and the magic of Machu Picchu, we will carry every emotion of this new beginning.",
                 lista_affetto: "Your love and presence are the most precious gift.",
                 lista_iban_intro: "If you'd like to join us on this special adventure, here is a way to do so:",
-                lista_iban_int: "Bank transfer in the name of the couple, Janira Corrias and Tommaso Maggi",
+                lista_iban_int: "Bank transfer in the name of the couple, Christian Rollo",
                 sec_scopri: "Explore Alghero",
                 scopri_sub: "Our recommendations for your stay",
                 g_mare: "The Sea",
@@ -1508,7 +1520,7 @@
                 lista_testo: "Pour notre lune de miel, nous avons choisi le Pérou, un voyage dont nous rêvons depuis longtemps : entre les sommets des Andes et la magie du Machu Picchu, nous emporterons avec nous chaque émotion de ce nouveau départ.",
                 lista_affetto: "Votre affection est pour nous le plus précieux des cadeaux.",
                 lista_iban_intro: "Si vous souhaitez nous accompagner dans cette aventure spéciale, voici comment le faire :",
-                lista_iban_int: "Virement au nom des mariés, Janira Corrias et Tommaso Maggi",
+                lista_iban_int: "Virement au nom des mariés, Christian Rollo",
                 sec_scopri: "Découvrir Alghero",
                 scopri_sub: "Nos conseils pour votre séjour",
                 g_mare: "La Mer",
@@ -1633,7 +1645,7 @@
         /* ================================================================
            COUNTDOWN
         ================================================================ */
-        const weddingDate = new Date("August 29, 2026 16:00:00").getTime();
+        const weddingDate = new Date("October 17, 2026 16:00:00").getTime();
         setInterval(() => {
             const d = weddingDate - Date.now();
             if (d > 0) {
