@@ -1174,21 +1174,23 @@
             <h2>RSVP</h2>
             <p data-i18n="rsvp_intro">Vi preghiamo di confermare la vostra partecipazione</p>
             <form
-                action="https://script.google.com/macros/s/AKfycbxSyER9lulmSQsgp9Wt0lKdw7jKi4yWdJoty2G6u2_qJFZEi1LGMWfOkVzRq6OjmxKhEA/exec"
+                action="https://script.google.com/macros/s/AKfycbzzLZp_piYqTOn76TmbETrC_u2SRu2Tsb70HgICQ50UdWRoYaUuDpjzWUSg-RFCe0TzHw/exec"
                 method="POST" class="form_matrimonio" id="form-matrimonio">
                 <div class="conferma_container">
 
+                    <!-- Nome e cognome -->
                     <div class="form_group">
-                        <label data-i18n="f_nome">Nome e Cognome *</label>
+                        <label data-i18n="f_nome">Nome e cognome *</label>
                         <input type="text" name="nome_cognome" required>
                     </div>
 
+                    <!-- Parteciperete? -->
                     <div class="form_group">
-                        <label data-i18n="f_presenza">Parteciperai? *</label>
+                        <label data-i18n="f_presenza">Parteciperete? *</label>
                         <div class="radio_group">
                             <label class="radio_item">
                                 <input type="radio" name="presenza" value="si" required id="presenza-si">
-                                <span data-i18n="f_si">Si</span>
+                                <span data-i18n="f_si">Sì</span>
                             </label>
                             <label class="radio_item">
                                 <input type="radio" name="presenza" value="no" id="presenza-no">
@@ -1198,43 +1200,57 @@
                     </div>
 
                     <div id="resto-form">
+                        <!-- Numero adulti -->
                         <div class="form_group">
-                            <label data-i18n="f_accompagnatore">Accompagnatore/Accompagnatrice</label>
-                            <input type="text" name="piu_uno" data-i18n-placeholder="f_accompagnatore_ph">
+                            <label data-i18n="f_num_adulti">Numero adulti</label>
+                            <input type="number" name="numero_adulti" min="0" id="input_num_adulti">
                         </div>
+
+                        <!-- Numero bambini -->
                         <div class="form_group">
-                            <label data-i18n="f_bambini">Porterai bambini/e con te? *</label>
-                            <div class="radio_group">
-                                <label class="radio_item"><input type="radio" name="bambini" value="si" id="bambini-si">
-                                    <span data-i18n="f_si">Si</span></label>
-                                <label class="radio_item"><input type="radio" name="bambini" value="no" id="bambini-no">
-                                    <span data-i18n="f_no">No</span></label>
-                            </div>
+                            <label data-i18n="f_num_bambini">Numero bambini</label>
+                            <input type="number" name="numero_bambini" min="0" id="input_num_bambini">
                         </div>
-                        <div class="form_group" id="gruppo_bambini">
-                            <label data-i18n="f_bambini_det">Dettagli Bambini *</label>
+
+                        <!-- Età e lingua parlata dai bambini -->
+                        <div class="form_group">
+                            <label data-i18n="f_bambini_det">Età e lingua parlata dai bambini</label>
                             <textarea name="dettagli_bambini" id="input_bambini" rows="3" style="resize:none"
                                 data-i18n-placeholder="f_bambini_ph"></textarea>
                         </div>
+
+                        <!-- Restrizioni alimentari -->
                         <div class="form_group">
-                            <label data-i18n="f_intolleranze">Allergie, intolleranze o preferenze alimentari? *</label>
-                            <div class="intolleranze" data-i18n="f_intolleranze_sub">Tue o di eventuali accompagnatori
-                            </div>
+                            <label data-i18n="f_intolleranze">Restrizioni alimentari (allergie, intolleranze, regime alimentari specifici…)</label>
+                            <textarea name="restrizioni_alimentari" id="input_specifica" rows="2" style="resize:none"
+                                data-i18n-placeholder="f_intolleranze_ph"></textarea>
+                        </div>
+
+                        <!-- Navetta -->
+                        <div class="form_group">
+                            <label data-i18n="f_navetta">Avete bisogno di una navetta che vi porti da Torino centro alla chiesa e poi al ristorante (e ritorno)? *</label>
                             <div class="radio_group">
-                                <label class="radio_item"><input type="radio" name="intolleranze" value="si"
-                                        id="intolleranze-si"> <span data-i18n="f_si">Si</span></label>
-                                <label class="radio_item"><input type="radio" name="intolleranze" value="no"
-                                        id="intolleranze-no"> <span data-i18n="f_no">No</span></label>
+                                <label class="radio_item"><input type="radio" name="navetta" value="si" id="navetta-si" required> <span data-i18n="f_si">Sì</span></label>
+                                <label class="radio_item"><input type="radio" name="navetta" value="no" id="navetta-no" required> <span data-i18n="f_navetta_no">No, mi muoverò con mezzi propri</span></label>
                             </div>
                         </div>
-                        <div class="form_group" id="gruppo_specifica">
-                            <label data-i18n="f_specifica">Specifica allergie/intolleranze *</label>
-                            <input type="text" name="specifica_intolleranze" id="input_specifica">
-                        </div>
+
+                        <!-- Aperitivo venerdì -->
                         <div class="form_group">
-                            <label data-i18n="f_note">Note per gli sposi</label>
-                            <textarea name="note" rows="3" style="resize:none"
-                                data-i18n-placeholder="f_note_ph"></textarea>
+                            <label data-i18n="f_aperitivo_ven">Sareste interessati in un aperitivo nel pomeriggio di venerdì 16 ottobre? *</label>
+                            <div class="radio_group">
+                                <label class="radio_item"><input type="radio" name="aperitivo_venerdi" value="si" id="aperitivo-si" required> <span data-i18n="f_si">Sì</span></label>
+                                <label class="radio_item"><input type="radio" name="aperitivo_venerdi" value="no" id="aperitivo-no" required> <span data-i18n="f_no">No</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Visita guidata domenica -->
+                        <div class="form_group">
+                            <label data-i18n="f_visita_dom">Sareste interessati in una visita guidata di Torino domenica 18 ottobre? *</label>
+                            <div class="radio_group">
+                                <label class="radio_item"><input type="radio" name="visita_domenica" value="si" id="visita-si" required> <span data-i18n="f_si">Sì</span></label>
+                                <label class="radio_item"><input type="radio" name="visita_domenica" value="no" id="visita-no" required> <span data-i18n="f_no">No</span></label>
+                            </div>
                         </div>
                     </div>
 
@@ -1262,78 +1278,6 @@
                 <span style="font-size: 0.75rem"><i data-i18n="lista_iban_int"></i></span>
             </p>
         </section>
-
-        <!-- SCOPRI ALGHERO -->
-        <!-- <section id="scopri" class="scopri-alghero">
-            <div class="section-icon"><img class="alghero-icon" src="./images/icons/alghero.png" alt="Scopri"></div>
-            <div class="accordion-header" onclick="toggleAlghero()" style="cursor:pointer;">
-                <h2>
-                    <span data-i18n="sec_scopri">Scopri Alghero</span>
-                    <span id="accordion-arrow"
-                        style="display:inline-block; transition:transform 0.3s ease; font-size:1.5rem; vertical-align:middle; margin-left:10px;">&#8595;</span>
-                </h2>
-                <p><i data-i18n="scopri_sub">I nostri consigli per il vostro soggiorno</i></p>
-            </div>
-            <div id="accordion-content"
-                style="max-height:0; overflow:hidden; transition:max-height 0.5s ease-out; opacity:0;">
-                <div class="guide-container" style="padding-top:40px;">
-                    <div class="guide-category">
-                        <h3>&#127754; <span data-i18n="g_mare">Il Mare</span></h3>
-                        <ul class="guide-list">
-                            <li>Il Lazzaretto & Le Bombarde</li>
-                            <li>Porto Ferro</li>
-                            <li data-i18n="g_gommone">Noleggio gommone</li>
-                            <li data-i18n="g_calette">Giro delle calette</li>
-                        </ul>
-                    </div>
-                    <div class="guide-category">
-                        <h3>&#127864; <span data-i18n="g_aperitivo">Aperitivo</span></h3>
-                        <ul class="guide-list">
-                            <li><b>Ristorante l’Ultimo Borgo</b></li>
-                            <li><b>Riservato</b></li>
-                            <li><b>Bahia</b></li>
-                            <li><b>Rifugio di Mare</b></li>
-                            <li><b>Bar di Porto Ferro</b></li>
-                        </ul>
-                    </div>
-                    <div class="guide-category">
-                        <h3>&#129316; <span data-i18n="g_mangiare">Dove Mangiare</span></h3>
-                        <ul class="guide-list">
-                            <li>Focaccia dal Milese</li>
-                            <li>Ballarini</li>
-                            <li>Bella Napoli</li>
-                            <li>Musciora / Nautilus</li>
-                            <li>La Piccola Cucina</li>
-                        </ul>
-                    </div>
-                    <div class="guide-category">
-                        <h3>&#127846; <span data-i18n="g_tipici">Tipici & Gelato</span></h3>
-                        <ul class="guide-list">
-                            <li><b>Sa Mandra</b></li>
-                            <li><b>Agriturismo Barbagia</b></li>
-                            <li><b>Golositas</b></li>
-                            <li><b>Re Gelato</b></li>
-                        </ul>
-                    </div>
-                    <div class="guide-category">
-                        <h3>&#127749; <span data-i18n="g_nonperdere">Da non perdere</span></h3>
-                        <ul class="guide-list">
-                            <li data-i18n="g_nettuno">Grotte di Nettuno</li>
-                            <li data-i18n="g_capo">Belvedere di Capo Caccia</li>
-                            <li data-i18n="g_torre">Torre del Porticciolo</li>
-                        </ul>
-                    </div>
-                    <div class="guide-category">
-                        <h3>&#127863; <span data-i18n="g_cantine">Cantine</span></h3>
-                        <ul class="guide-list">
-                            <li>Tenute Sella & Mosca</li>
-                            <li>Podere Guardia Grande</li>
-                            <li>Santa Maria La Palma</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>-->
 
         <footer>
             <div class="footer-photo-wrapper">
@@ -1376,20 +1320,20 @@
                 ev_party: "Party",
                 sec_arrivare: "Come arrivare",
                 rsvp_intro: "Vi preghiamo di confermare la vostra partecipazione",
-                f_nome: "Nome e Cognome *",
-                f_presenza: "Parteciperai? *",
+                f_nome: "Nome e cognome *",
+                f_presenza: "Parteciperete? *",
                 f_si: "Sì",
                 f_no: "No",
-                f_accompagnatore: "Accompagnatore/Accompagnatrice",
-                f_accompagnatore_ph: "Nome e cognome",
-                f_bambini: "Porterai bambini/e con te? *",
-                f_bambini_det: "Dettagli Bambini (numero, nomi, età, allergie) *",
-                f_bambini_ph: "Es: 2 bambini: Anna (4 anni), Marco (6 anni)",
-                f_intolleranze: "Allergie, intolleranze o preferenze alimentari? *",
-                f_intolleranze_sub: "Tue o di eventuali accompagnatori",
-                f_specifica: "Specifica allergie/intolleranze *",
-                f_note: "Note per gli sposi",
-                f_note_ph: "Scrivici qualcosa...",
+                f_num_adulti: "Numero adulti",
+                f_num_bambini: "Numero bambini",
+                f_bambini_det: "Età e lingua parlata dai bambini",
+                f_bambini_ph: "Es: 4 anni, parla italiano",
+                f_intolleranze: "Restrizioni alimentari (allergie, intolleranze, regime alimentari specifici…)",
+                f_intolleranze_ph: "Scrivi qui eventuali restrizioni alimentari...",
+                f_navetta: "Avete bisogno di una navetta che vi porti da Torino centro alla chiesa e poi al ristorante (e ritorno)? *",
+                f_navetta_no: "No, mi muoverò con mezzi propri",
+                f_aperitivo_ven: "Sareste interessati in un aperitivo nel pomeriggio di venerdì 16 ottobre? *",
+                f_visita_dom: "Sareste interessati in una visita guidata di Torino domenica 18 ottobre? *",
                 f_invia: "Invia Conferma",
                 f_invio_btn: "Invio...",
                 f_invio_loading: "Stiamo salvando la tua conferma...",
@@ -1401,19 +1345,6 @@
                 lista_affetto: "Il vostro affetto è per noi il dono più prezioso.",
                 lista_iban_intro: "Se vorrete accompagnarci in questa avventura speciale, lasciamo qui un modo per farlo:",
                 lista_iban_int: "IBAN intestato a Christian Rollo",
-                sec_scopri: "Scopri Alghero",
-                scopri_sub: "I nostri consigli per il vostro soggiorno",
-                g_mare: "Il Mare",
-                g_gommone: "Noleggio gommone",
-                g_calette: "Giro delle calette",
-                g_aperitivo: "Aperitivo",
-                g_mangiare: "Dove Mangiare",
-                g_tipici: "Tipici & Gelato",
-                g_nonperdere: "Da non perdere",
-                g_nettuno: "Grotte di Nettuno",
-                g_capo: "Belvedere di Capo Caccia",
-                g_torre: "Torre del Porticciolo",
-                g_cantine: "Cantine"
             },
             en: {
                 login_text: "This invitation is just for you.\nEnter the secret word to discover all the details",
@@ -1436,20 +1367,20 @@
                 ev_party: "Party",
                 sec_arrivare: "Getting there",
                 rsvp_intro: "Please confirm your attendance",
-                f_nome: "Full Name *",
+                f_nome: "First and last name *",
                 f_presenza: "Will you attend? *",
                 f_si: "Yes",
                 f_no: "No",
-                f_accompagnatore: "Plus One",
-                f_accompagnatore_ph: "Full name",
-                f_bambini: "Will you bring children? *",
-                f_bambini_det: "Children details (number, names, age, allergies) *",
-                f_bambini_ph: "E.g: 2 children: Anna (4 years), Marco (6 years)",
-                f_intolleranze: "Food allergies, intolerances or preferences? *",
-                f_intolleranze_sub: "Yours or your plus one's",
-                f_specifica: "Please specify allergies/intolerances *",
-                f_note: "A note for the couple",
-                f_note_ph: "Write us something...",
+                f_num_adulti: "Number of adults",
+                f_num_bambini: "Number of children",
+                f_bambini_det: "Age and language spoken of the children",
+                f_bambini_ph: "E.g: 4 years old, speaks English",
+                f_intolleranze: "Dietary requirements (allergy, intolerances, specific diet…)",
+                f_intolleranze_ph: "Let us know about any dietary requirements...",
+                f_navetta: "Will you need a shuttle bus from Turin city centre to the Church and the restaurant (and back)? *",
+                f_navetta_no: "No, I will use my own car",
+                f_aperitivo_ven: "Would you be available for and interested by an aperitivo on Friday 16 October evening? *",
+                f_visita_dom: "Would you be available for and interested by a walking tour of Turin city centre on Sunday 18 October? *",
                 f_invia: "Send RSVP",
                 f_invio_btn: "Sending...",
                 f_invio_loading: "Saving your response...",
@@ -1460,20 +1391,7 @@
                 lista_testo: "For our honeymoon we chose Peru — a trip we have long dreamed of: among the peaks of the Andes and the magic of Machu Picchu, we will carry every emotion of this new beginning.",
                 lista_affetto: "Your love and presence are the most precious gift.",
                 lista_iban_intro: "If you'd like to join us on this special adventure, here is a way to do so:",
-                lista_iban_int: "Bank transfer in the name of the couple, Christian Rollo",
-                sec_scopri: "Explore Alghero",
-                scopri_sub: "Our recommendations for your stay",
-                g_mare: "The Sea",
-                g_gommone: "Boat rental",
-                g_calette: "Coves tour",
-                g_aperitivo: "Aperitivo",
-                g_mangiare: "Where to Eat",
-                g_tipici: "Local Bites & Gelato",
-                g_nonperdere: "Must-see",
-                g_nettuno: "Neptune's Grotto",
-                g_capo: "Capo Caccia Viewpoint",
-                g_torre: "Torre del Porticciolo",
-                g_cantine: "Wineries"
+                lista_iban_int: "Bank transfer in the name of Christian Rollo",
             },
             fr: {
                 login_text: "Cette invitation est pour vous.\nEntrez le mot secret pour découvrir tous les détails",
@@ -1497,19 +1415,19 @@
                 sec_arrivare: "Comment arriver",
                 rsvp_intro: "Merci de confirmer votre participation",
                 f_nome: "Nom et Prénom *",
-                f_presenza: "Serez-vous présent(e) ? *",
+                f_presenza: "Serez-vous présent(s)? *",
                 f_si: "Oui",
                 f_no: "Non",
-                f_accompagnatore: "Accompagnateur / Accompagnatrice",
-                f_accompagnatore_ph: "Nom et prénom",
-                f_bambini: "Viendrez-vous avec des enfants ? *",
-                f_bambini_det: "Détails des enfants (nombre, prénoms, âge, allergies) *",
-                f_bambini_ph: "Ex : 2 enfants : Anna (4 ans), Marco (6 ans)",
-                f_intolleranze: "Allergies, intolérances ou préférences alimentaires ? *",
-                f_intolleranze_sub: "Les vôtres ou celles de votre accompagnateur",
-                f_specifica: "Précisez les allergies/intolérances *",
-                f_note: "Un mot pour les mariés",
-                f_note_ph: "Écrivez-nous quelque chose...",
+                f_num_adulti: "Nombre d'adulte(s)",
+                f_num_bambini: "Nombre d'enfant(s)",
+                f_bambini_det: "Âge et langue(s) parlée(s) par les enfants",
+                f_bambini_ph: "Ex : 4 ans, parle français",
+                f_intolleranze: "Restrictions alimentaires (allergie, intolérances, régime alimentaire spécifique…)",
+                f_intolleranze_ph: "Indiquez ici vos restrictions alimentaires éventuelles...",
+                f_navetta: "Aurez-vous besoin de prendre une navette entre Turin et l'église à Mappano et, après, le restaurant (avec retour)? *",
+                f_navetta_no: "Non, j'utiliserai ma voiture",
+                f_aperitivo_ven: "Seriez-vous disponible(s) et intéressé(s) par un apéritif le soir du vendredi 16 octobre? *",
+                f_visita_dom: "Seriez-vous disponible(s) et intéressé(s) par une visite guidée du centre-ville de Turin le dimanche 18 octobre? *",
                 f_invia: "Envoyer la confirmation",
                 f_invio_btn: "Envoi...",
                 f_invio_loading: "Enregistrement de votre confirmation...",
@@ -1520,20 +1438,7 @@
                 lista_testo: "Pour notre lune de miel, nous avons choisi le Pérou, un voyage dont nous rêvons depuis longtemps : entre les sommets des Andes et la magie du Machu Picchu, nous emporterons avec nous chaque émotion de ce nouveau départ.",
                 lista_affetto: "Votre affection est pour nous le plus précieux des cadeaux.",
                 lista_iban_intro: "Si vous souhaitez nous accompagner dans cette aventure spéciale, voici comment le faire :",
-                lista_iban_int: "Virement au nom des mariés, Christian Rollo",
-                sec_scopri: "Découvrir Alghero",
-                scopri_sub: "Nos conseils pour votre séjour",
-                g_mare: "La Mer",
-                g_gommone: "Location de bateau pneumatique",
-                g_calette: "Tour des calanques",
-                g_aperitivo: "Apéritif",
-                g_mangiare: "Où manger",
-                g_tipici: "Spécialités & Glaces",
-                g_nonperdere: "À ne pas manquer",
-                g_nettuno: "Grottes de Neptune",
-                g_capo: "Belvédère de Capo Caccia",
-                g_torre: "Torre del Porticciolo",
-                g_cantine: "Caves viticoles"
+                lista_iban_int: "Virement au nom de Christian Rollo",
             }
         };
 
@@ -1657,12 +1562,12 @@
         }, 1000);
 
         /* ================================================================
-           FORM LOGIC
+           FORM LOGIC — mostra/nasconde resto del form in base alla presenza
         ================================================================ */
         const restoForm = document.getElementById('resto-form');
 
         function abilitaRestoForm(abilita) {
-            ['bambini', 'intolleranze'].forEach(name => {
+            ['navetta', 'aperitivo_venerdi', 'visita_domenica'].forEach(name => {
                 document.querySelectorAll('#resto-form input[name="' + name + '"]').forEach(r => {
                     r.required = abilita;
                 });
@@ -1674,14 +1579,11 @@
         function nascondiRestoForm() {
             restoForm.classList.remove('aperto');
             abilitaRestoForm(false);
-            document.getElementById('gruppo_specifica').style.display = 'none';
-            document.getElementById('gruppo_bambini').style.display = 'none';
-            const is = document.getElementById('input_specifica');
-            const ib = document.getElementById('input_bambini');
-            is.required = false; is.value = '';
-            ib.required = false; ib.value = '';
+            document.getElementById('input_num_adulti').value = '';
+            document.getElementById('input_num_bambini').value = '';
+            document.getElementById('input_bambini').value = '';
+            document.getElementById('input_specifica').value = '';
             restoForm.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
-            restoForm.querySelectorAll('input[type="text"], textarea').forEach(i => i.value = '');
         }
 
         document.querySelectorAll('input[name="presenza"]').forEach(radio => {
@@ -1690,37 +1592,10 @@
             });
         });
 
-        function bindConditionalRadio(radioName, groupId, inputId) {
-            const group = document.getElementById(groupId);
-            const input = inputId ? document.getElementById(inputId) : null;
-            document.querySelectorAll('input[name="' + radioName + '"]').forEach(radio => {
-                radio.addEventListener('change', () => {
-                    const show = radio.value === 'si' && radio.checked;
-                    group.style.display = show ? 'flex' : 'none';
-                    if (input) { input.required = show; if (!show) input.value = ''; }
-                });
-            });
-        }
-
-        bindConditionalRadio('intolleranze', 'gruppo_specifica', 'input_specifica');
-        bindConditionalRadio('bambini', 'gruppo_bambini', 'input_bambini');
-
-        /* ================================================================
-           ACCORDION
-        ================================================================ */
-        function toggleAlghero() {
-            const content = document.getElementById('accordion-content');
-            const arrow = document.getElementById('accordion-arrow');
-            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-            content.style.maxHeight = isOpen ? '0px' : content.scrollHeight + 'px';
-            content.style.opacity = isOpen ? '0' : '1';
-            arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-        }
-
         /* ================================================================
            FORM SUBMIT
         ================================================================ */
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyER9lulmSQsgp9Wt0lKdw7jKi4yWdJoty2G6u2_qJFZEi1LGMWfOkVzRq6OjmxKhEA/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzzLZp_piYqTOn76TmbETrC_u2SRu2Tsb70HgICQ50UdWRoYaUuDpjzWUSg-RFCe0TzHw/exec';
         const form = document.getElementById('form-matrimonio');
         const btn = document.getElementById('submit-btn');
         const msg = document.getElementById('messaggio-conferma');
